@@ -24,5 +24,16 @@ services:
     entrypoint: ["tail"]
     command: ["-f", "/dev/null"]
 
+  portal:
+    <<: *node
+    image: danlynn/ember-cli:3.13.0
+    working_dir: /leadership-update/services/portal
+    entrypoint: ["ember"]
+    command: ["serve", "--port", "13002"]
+    tmpfs:
+      - /leadership-update/services/portal/tmp
+    ports:
+      - "13002:13002"
+
 volumes:
   yarn-cache: {}

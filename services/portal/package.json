@@ -1,5 +1,5 @@
 {
-  "name": "@base-cms/leadership-update-portal",
+  "name": "portal",
   "version": "0.0.0",
   "private": true,
   "description": "The BaseCMS Leadership Update Portal application",

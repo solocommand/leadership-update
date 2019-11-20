@@ -1,0 +1,17 @@
+{
+  "name": "@base-cms/leadership-update-config-server",
+  "version": "0.0.0",
+  "description": "The Config Server for the BaseCMS Leadership Update portal",
+  "main": "src/index.js",
+  "repository": "https://github.com/base-cms/leadership-update/tree/master/services/config-server",
+  "author": "Josh Worden <josh@limit0.io>",
+  "license": "MIT",
+  "dependencies": {
+    "envalid": "^6.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cached": "^1.1.1",
+    "gulp-eslint": "^5.0.0"
+  }
+}

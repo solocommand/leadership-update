@@ -24,16 +24,29 @@ services:
     entrypoint: ["tail"]
     command: ["-f", "/dev/null"]
 
+  config-server:
+    <<: *node
+    working_dir: /leadership-update/services/config-server
+    entrypoint: ["./node_modules/.bin/gulp"]
+    environment:
+      <<: *env
+      TENANT_KEY: ${TENANT_KEY-as3_baseplatform}
+      GRAPHQL_URI: ${GRAPHQL_URI-https://caprica.graphql.base-cms-staging.io}
+    ports:
+      - "13001:80"
+
   portal:
     <<: *node
     image: danlynn/ember-cli:3.13.0
     working_dir: /leadership-update/services/portal
     entrypoint: ["ember"]
-    command: ["serve", "--port", "13002"]
+    command: ["serve", "--port", "13002", "--proxy", "http://config-server"]
     tmpfs:
       - /leadership-update/services/portal/tmp
     ports:
       - "13002:13002"
+    depends_on:
+      - config-server
 
 volumes:
   yarn-cache: {}

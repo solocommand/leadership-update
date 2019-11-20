@@ -1,11 +1,11 @@
 {
-  "name": "portal",
+  "name": "@base-cms/leadership-update-portal",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for portal goes here",
-  "repository": "",
+  "description": "The BaseCMS Leadership Update Portal application",
+  "repository": "https://github.com/base-cms/leadership-update/tree/master/services/portal",
   "license": "MIT",
-  "author": "",
+  "author": "Josh Worden <josh@limit0.io>",
   "directories": {
     "doc": "doc",
     "test": "tests"
